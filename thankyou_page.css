@@ -1,0 +1,97 @@
+ /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== BODY & BACKGROUND ===== */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/img.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* ===== DARK OVERLAY ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.65);
+      padding: 50px 30px;
+      border-radius: 20px;
+      max-width: 500px;
+      margin: auto;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1.animated {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: colorCycle 5s infinite ease-in-out;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.5),
+                   0 0 20px rgba(255, 255, 0, 0.4),
+                   0 0 25px rgba(0, 255, 0, 0.3);
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      color: #eee;
+    }
+
+    /* ===== BUTTON (FIXED) ===== */
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: limegreen;
+      color: black;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: yellow;
+      transform: scale(1.05);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes colorCycle {
+      0%   { color: red; }
+      33%  { color: yellow; }
+      66%  { color: lime; }
+      100% { color: red; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
